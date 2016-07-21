@@ -1,5 +1,5 @@
 {
-  "name": "canaveral",
+  "name": "peak",
   "version": "0.0.0",
   "description": "Web app for rocket API, It's a manager of docker deploy like a Docker cloud or almost",
   "main": "index.js",
