@@ -3,9 +3,7 @@
 .tmp/
 node_modules/
 bower_components/
-assets/css/
 dist/
 secrets.json
 app/constants.js
-assets/fonts/
 .DS_Store
