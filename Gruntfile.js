@@ -64,21 +64,6 @@ module.exports = function(grunt) {
             }
         },
 
-        sass: {
-            dist: {
-                options: {
-                    loadPath: [
-                        'bower_components/bootstrap-sass/assets/stylesheets',
-                        'bower_components/font-awesome/scss'
-                    ],
-                    style: 'expanded'
-                },
-                files: {
-                    'assets/css/main.css': 'assets/scss/main.scss'
-                }
-            }
-        },
-
         copy: {
             css: {
                 expand: true,
@@ -97,7 +82,7 @@ module.exports = function(grunt) {
             },
             fonts_bootstrap: {
                 expand: true,
-                cwd: 'bower_components/bootstrap-sass/assets/',
+                cwd: 'bower_components/bootstrap/',
                 src: 'fonts/**/*',
                 dest: 'assets/'
             },
@@ -198,7 +183,6 @@ module.exports = function(grunt) {
     grunt.registerTask('copy-fonts', ['copy:fonts_bootstrap', 'copy:font_awesome']);
 
     grunt.registerTask('debug', [
-        'sass',
         'copy-fonts',
         'ngconstant',
         'browserSync:dev',
@@ -207,7 +191,6 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
-        'sass',
         'replace:html',
         'copy:css',
         'copy:images',
