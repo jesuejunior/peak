@@ -1,0 +1,10 @@
+{
+  "angularConstants": {
+    "api": "http://dummy/api/"
+  },
+  "secrets": {
+    "bucketName": "dummy",
+    "awsAccessKeyId": "dummy",
+    "awsSecretKey": "dummy"
+  }
+}
