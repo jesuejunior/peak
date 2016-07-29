@@ -30,6 +30,7 @@
     "ngstorage": "0.3.10",
     "angular-toastr": "1.7.0",
     "chosen": "1.5.1",
-    "sweetalert2": "4.0.11"
+    "sweetalert2": "4.0.11",
+    "normalize-css": "normalize.css#^4.2.0"
   }
 }
