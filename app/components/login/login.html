@@ -1,0 +1,35 @@
+<div class="login-page">
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+
+            <a class="navbar-brand">
+                LOGO_HERE
+            </a>
+        </div>
+    </nav>
+
+    <fieldset class="container login-container">
+
+        <form class="pure-form pure-form-stacked" autocomplete="off">
+            <fieldset>
+                <legend>Please sign in</legend>
+
+                <label for="email" >Email address</label>
+                <input type="email" id="email" placeholder="Email address" required="" autofocus="" ng-model="$ctrl.login">
+
+                <label for="password" class="sr-only">Password</label>
+                <input type="password" id="password" placeholder="Password" required="" ng-model="$ctrl.pass">
+
+                <label for="remember" class="pure-checkbox">
+                    <input id="remember" type="checkbox"> Remember me
+                </label>
+
+                <button class="pure-button pure-button-primary" type="button" ng-click="$ctrl.submitLogin()">Sign in</button>
+            </fieldset>
+        </form>
+
+    </div>
+
+</div>
+
