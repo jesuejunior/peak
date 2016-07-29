@@ -72,26 +72,26 @@ module.exports = function(grunt) {
             },
             images: {
                 expand: true,
-                src: 'assets/images/**/*',
+                src: 'assets/img/**/*',
                 dest: 'dist/'
             },
             fonts: {
                 expand: true,
                 src: 'assets/fonts/**/*',
                 dest: 'dist/'
-            },
-            fonts_bootstrap: {
-                expand: true,
-                cwd: 'bower_components/bootstrap/',
-                src: 'fonts/**/*',
-                dest: 'assets/'
-            },
-            font_awesome: {
-                expand: true,
-                cwd: 'bower_components/font-awesome/',
-                src: 'fonts/**/*',
-                dest: 'assets/'
             }
+            // fonts_bootstrap: {
+            //     expand: true,
+            //     cwd: 'bower_components/bootstrap/',
+            //     src: 'fonts/**/*',
+            //     dest: 'assets/'
+            // },
+            // font_awesome: {
+            //     expand: true,
+            //     cwd: 'bower_components/font-awesome/',
+            //     src: 'fonts/**/*',
+            //     dest: 'assets/'
+            // }
         },
 
         ngAnnotate: {
@@ -180,10 +180,10 @@ module.exports = function(grunt) {
 
     grunt.registerTask('default', ['debug']);
 
-    grunt.registerTask('copy-fonts', ['copy:fonts_bootstrap', 'copy:font_awesome']);
+    // grunt.registerTask('copy-fonts', ['copy:fonts_bootstrap', 'copy:font_awesome']);
 
     grunt.registerTask('debug', [
-        'copy-fonts',
+        // 'copy-fonts',
         'ngconstant',
         'browserSync:dev',
         'watch'
@@ -194,7 +194,7 @@ module.exports = function(grunt) {
         'replace:html',
         'copy:css',
         'copy:images',
-        'copy-fonts',
+        // 'copy-fonts',
         'copy:fonts',
         'ngconstant',
         'useminPrepare',
