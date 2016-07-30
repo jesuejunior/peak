@@ -31,8 +31,14 @@
         .component('app', {
             templateUrl: 'app/components/app/app.html',
             $routeConfig: [
-                { path: '/login', name: 'Login', component: 'login', useAsDefault: true },
-                { path: '/...', name: 'Base', component: 'base'}
+                { path: '/login', name: 'Login', component: 'login'},
+                { path: '/containers', name: 'Container', component: 'container' },
+                { path: '/expeditions', name: 'Expedition', component: 'expedition' },
+                { path: '/home', name: 'Home', component: 'home', useAsDefault: true  },
+                { path: '/images/...', name: 'Image', component: 'image' },
+                { path: '/networks', name: 'Network', component: 'network' },
+                { path: '/nodes/...', name: 'Node', component: 'node' },
+                { path: '/volumes', name: 'Volume', component: 'volume' }
 
             ],
             controller: AppCtrl
