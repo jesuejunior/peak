@@ -5,16 +5,11 @@
         .module('app')
         .component('node', {
             templateUrl: 'app/components/node/node.html',
-            replace: true,
             $routeConfig: [
-               {path: '/node', name: 'Node', component: 'node', useAsDefault: true},
-               // {path: '/test2', name: 'Test2', component: 'test2'}
+                {path: '/', name: 'NodeList', component: 'nodeList', useAsDefault: true},
+                {path: '/:id/details', name: 'NodeDetail', component: 'nodeDetail'}
 
-            ],
-            controller: NodeCtrl
+            ]
         });
 
-    function NodeCtrl() {
-        //TODO
-    }
 })();
