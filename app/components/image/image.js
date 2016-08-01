@@ -5,11 +5,10 @@
         .module('app')
         .component('image', {
             templateUrl: 'app/components/image/image.html',
-            replace: true,
             $routeConfig: [
-               {path: '/image', name: 'Image', component: 'image', useAsDefault: true}
-               // {path: '/image2', name: 'image2', component: 'image2'}
-            
+                {path: '/', name: 'Image', component: 'image', useAsDefault: true},
+                // {path: '/test2', name: 'Test2', component: 'test2'}
+
             ],
             controller: ImageCtrl
         });
