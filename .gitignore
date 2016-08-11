@@ -8,3 +8,4 @@ secrets.json
 app/constants.js
 .DS_Store
 public/
+app.built.js

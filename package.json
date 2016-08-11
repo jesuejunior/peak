@@ -1,0 +1,40 @@
+{
+  "name": "peak",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.jsx",
+  "scripts": {
+    "build": "webpack -p --config webpack.production.config.js --progress --profile --colors",
+    "dev": "webpack-dev-server --progress --profile --colors",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "everest",
+    "web"
+  ],
+  "author": "Jesué Junior",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "react": "15.3.0",
+    "react-dom": "15.3.0"
+  },
+  "devDependencies": {
+    "babel-core": "6.13.2",
+    "babel-eslint": "6.1.2",
+    "babel-loader": "6.2.4",
+    "babel-preset-es2015": "6.13.2",
+    "babel-preset-react": "6.11.1",
+    "copy-webpack-plugin": "3.0.1",
+    "css-loader": "0.23.1",
+    "eslint": "3.2.2",
+    "eslint-plugin-react": "6.0.0",
+    "file-loader": "0.9.0",
+    "json-loader": "0.5.4",
+    "jsx-loader": "0.13.2",
+    "react-hot-loader": "1.3.0",
+    "style-loader": "0.13.1",
+    "url-loader": "0.5.7",
+    "webpack": "1.13.1",
+    "webpack-dev-server": "1.14.1"
+  }
+}
