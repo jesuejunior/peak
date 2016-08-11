@@ -1,0 +1,10 @@
+.sass-cache/
+.idea/
+.tmp/
+node_modules/
+bower_components/
+dist/
+secrets.json
+app/constants.js
+.DS_Store
+public/
