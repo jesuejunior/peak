@@ -19,7 +19,7 @@ module.exports = {
 		filename: 'app.built.js'
 	},
 	resolve: {
-		extensions: ['', '.js', '.jsx']
+		extensions: ['', '.js', '.jsx', '.css']
 	},
 	module: {
 		loaders
@@ -36,7 +36,8 @@ module.exports = {
 		new webpack.NoErrorsPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
 		new CopyWebpackPlugin([
-			{from: './index.html'}
+			{from: './index.html'},
+            {from: './css'}
 		]),
 	]
 };

@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Menu extends React.Component {
+class Navbar extends React.Component {
     render(){
-        return <h1> Menu </h1>
+        return <h1> Navbar </h1>
     }
 
 }
 
-ReactDOM.render(<Menu />, document.getElementById('menu'));
+ReactDOM.render(<Navbar />, document.getElementById('navbar'));

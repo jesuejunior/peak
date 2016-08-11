@@ -1,3 +1,3 @@
-import App from './app.jsx';
-import Menu from './menu.jsx';
+import App from './src/components/app/app.jsx';
+import Navbar from './src/components/navbar/navbar.jsx';
 
