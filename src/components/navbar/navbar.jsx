@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class Navbar extends React.Component {
     render(){
@@ -12,4 +11,4 @@ class Navbar extends React.Component {
 
 }
 
-ReactDOM.render(<Navbar />, document.getElementById('navbar'));
+export default Navbar; 

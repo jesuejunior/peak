@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Navbar from './components/navbar/navbar.jsx'
+import routes from './routes.jsx';
+import Home from './components/dashboard/home.jsx';
 
-ReactDOM.render(<Navbar />, document.getElementById('peakApp'));
+console.log(routes);
+
+ReactDOM.render(routes, document.getElementById('peakApp'));
