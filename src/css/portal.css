@@ -51,7 +51,7 @@ body {
 }
 
 .custom-menu-brand {
-    url('../img/logo-peak.png');
+    /* url('img/logo-peak.png'); */
     display: block;
     text-align: center;
     position: relative;
