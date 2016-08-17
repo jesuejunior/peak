@@ -9,4 +9,4 @@ class UserLogin extends React.Component {
     }
 }
 
-export default UserLogin;
+export { UserLogin };

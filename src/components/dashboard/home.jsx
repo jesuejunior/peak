@@ -7,11 +7,10 @@ class Home extends React.Component {
             <h3> Home
                 {console.log('abc')}
             </h3>
-            {this.props.children}
           </div>
 
       )
     }
 }
 
-export default Home;
+export { Home };
