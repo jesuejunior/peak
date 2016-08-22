@@ -55,6 +55,13 @@ gulp.task('jsx', ['eslint'], function() {
     .pipe(gulp.dest('./public'));
 });
 
+gulp.task('img', function() {
+  gulp.src('./src/img/*')
+    .pipe(gulp.dest('./public/img'));
+  gulp.src('./src/img/favicon.ico')
+    .pipe(gulp.dest('./public'));
+});
+
 gulp.task("index", function() {
   var jsFilter = filter("public/app.js", { restore: true });
   var cssFilter = filter("src/**/*.css", { restore: true });
@@ -84,6 +91,7 @@ gulp.task('clean', function () {
 gulp.task('watch', function() {
   gulp.watch('src/**/*.{js,jsx,html}', ['jsx', 'index']);
   gulp.watch('css/**/*.css', ['css']);
+  gulp.watch('img/**/*.{png,jpg}', ['img']);
 });
 
 // BrowserSync
@@ -99,5 +107,5 @@ gulp.task('browsersync', function() {
   });
 });
 
-gulp.task('build', ['jsx', 'index']);
+gulp.task('build', ['jsx', 'index', 'img']);
 gulp.task('default', ['build', 'browsersync', 'watch']);
