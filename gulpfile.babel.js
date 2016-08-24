@@ -38,7 +38,7 @@ gulp.task('eslint', function() {
 gulp.task('jsx', ['eslint'], function() {
     var b =  watchify(
     browserify({
-      entries: ['src/app.js'],
+      entries: ['./src/app.jsx'],
       debug: true,
       extensions: [' ', 'js', 'jsx']
     })
@@ -47,7 +47,7 @@ gulp.task('jsx', ['eslint'], function() {
     })))
     return b.bundle()
     .on('error', function(err) { console.error(err); this.emit('end'); })
-    .pipe(source('app.js'))
+    .pipe(source('app.jsx'))
     .pipe(buffer())
     .pipe(sourcemaps.init({ loadMaps: true }))
     .pipe(sourcemaps.write('./'))
@@ -63,7 +63,7 @@ gulp.task('img', function() {
 });
 
 gulp.task("index", function() {
-  var jsFilter = filter("public/app.js", { restore: true });
+  var jsFilter = filter("public/app.jsx", { restore: true });
   var cssFilter = filter("src/**/*.css", { restore: true });
   var indexHtmlFilter = filter(['src/**/*', '!**/index.html'], { restore: true });
 
