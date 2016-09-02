@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router';
 
 export default class Navbar extends React.Component {
   render() {
@@ -13,12 +14,12 @@ export default class Navbar extends React.Component {
               <div className="custom-menu-screen"></div>
               <ul className="pure-menu-list">
                 <li className="pure-menu-item"> <Link to='/home' activeClassName="active" className="pure-menu-link">Home</Link></li>
-                <li className="pure-menu-item"><a href="#" ng-link="['Container']" className="pure-menu-link">Containers</a></li>
-                <li className="pure-menu-item"><a href="#" ng-link="['Expedition']"className="pure-menu-link">Expeditions</a></li>
-                <li className="pure-menu-item"><a href="#" ng-link="['Image']" className="pure-menu-link">Images</a></li>
-                <li className="pure-menu-item"><a href="#" ng-link="['Network']" className="pure-menu-link">Networks</a></li>
-                <li className="pure-menu-item"><a href="#" ng-link="['NodeList']" className="pure-menu-link">Nodes</a></li>
-                <li className="pure-menu-item"><a href="#" ng-link="['Volume']" className="pure-menu-link">Volumes</a></li>
+                <li className="pure-menu-item"><a href="#" className="pure-menu-link">Containers</a></li>
+                <li className="pure-menu-item"><a href="#" className="pure-menu-link">Expeditions</a></li>
+                <li className="pure-menu-item"><a href="#" className="pure-menu-link">Images</a></li>
+                <li className="pure-menu-item"><a href="#" className="pure-menu-link">Networks</a></li>
+                <li className="pure-menu-item"><a href="#" className="pure-menu-link">Nodes</a></li>
+                <li className="pure-menu-item"><a href="#" className="pure-menu-link">Volumes</a></li>
                 <li className="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
                   <a href="#"  className="pure-menu-link"> <img className="" width="40px" height="40px"/> </a>
                   <ul className="pure-menu-children">

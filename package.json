@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npm run watch",
     "watch": "gulp watch",
-    "build": "gulp build"
+    "build": "gulp build",
+    "test": "jest"
   },
   "keywords": [
     "everest",
@@ -28,6 +29,8 @@
     "babel": "^6.5.2",
     "babel-core": "^6.13.2",
     "babel-eslint": "6.1.2",
+    "babel-jest": "^15.0.0",
+    "babel-polyfill": "^6.13.0",
     "babel-preset-es2015": "6.13.2",
     "babel-preset-react": "6.11.1",
     "babel-register": "6.11.6",
@@ -49,6 +52,7 @@
     "gulp-sourcemaps": "^2.0.0-alpha",
     "gulp-uglify": "^1.5.3",
     "imagemin-pngquant": "^5.0.0",
+    "jest-cli": "^15.1.0",
     "lodash": "^4.11.1",
     "postcss-nested": "^1.0.0",
     "postcss-simple-extend": "^1.0.0",
