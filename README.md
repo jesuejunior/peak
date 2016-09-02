@@ -7,6 +7,10 @@ App web for everest API. It's a manager of docker deploy like a Docker cloud or 
 
     $ npm i
 ```
+```shell
+
+    $ npm run test
+```
 
 ```shell
 
