@@ -7,5 +7,5 @@ dist/
 secrets.json
 app/constants.js
 .DS_Store
-public/
+dist/
 app.built.js

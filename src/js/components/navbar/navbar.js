@@ -1,9 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router';
+import React from "react";
 
-class Navbar extends React.Component {
-    render(){
-      return(
+export default class Navbar extends React.Component {
+  render() {
+    return(
         <div>
           <div className="custom-menu-wrapper">
             <div className="pure-menu custom-menu custom-menu-top">
@@ -29,11 +28,8 @@ class Navbar extends React.Component {
                 </li>
               </ul>
             </div>
-          </div>                
+          </div>
         </div>
         )
-    }
-
+  }
 }
-
-export default Navbar; 
