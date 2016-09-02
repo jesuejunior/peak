@@ -32,7 +32,7 @@ const paths = {
   srcLint: ['src/**/*.js', 'test/**/*.js'],
   dist: 'src/dist',
   distJs: 'src/dist/js',
-  distImg: 'dist/images',
+  distImg: 'src/dist/images',
   distDeploy: './dist/**/*'
 };
 
