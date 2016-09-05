@@ -16,4 +16,4 @@ const routes = (
   </Router>
 );
 
-ReactDOM.render(routes, document.getElementById('content'));
+export default routes;

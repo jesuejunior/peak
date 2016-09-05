@@ -26,14 +26,14 @@ import runSequence from 'run-sequence';
 
 const paths = {
   bundle: 'app.js',
-  entry: 'src/js/app.js',
+  entry: 'src/scripts/app.jsx',
   srcCss: 'src/**/*.scss',
   srcImg: 'src/images/**',
-  srcLint: ['src/**/*.js', 'test/**/*.js'],
-  dist: 'src/dist',
-  distJs: 'src/dist/js',
-  distImg: 'src/dist/images',
-  distDeploy: './dist/**/*'
+  srcLint: ['src/**/*.jsx', 'test/**/*.jsx'],
+  dist: 'src/public',
+  distJs: 'src/public/js',
+  distImg: 'src/public/images',
+  distDeploy: './public/**/*'
 };
 
 const customOpts = {
@@ -77,8 +77,11 @@ gulp.task('watchify', () => {
 });
 
 gulp.task('browserify', () => {
-  browserify(paths.entry, { debug: true })
-  .transform(babelify)
+  browserify({
+    debug: true,
+    entries: paths.entry,
+    transform: [ babelify ]
+  })
   .bundle()
   .pipe(source(paths.bundle))
   .pipe(buffer())
