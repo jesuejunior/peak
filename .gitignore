@@ -9,3 +9,4 @@ app/constants.js
 .DS_Store
 dist/
 app.built.js
+public/
