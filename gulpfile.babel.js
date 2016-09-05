@@ -80,6 +80,7 @@ gulp.task('browserify', () => {
   browserify({
     debug: true,
     entries: paths.entry,
+    extensions: ["jsx", "js", " "],
     transform: [ babelify ]
   })
   .bundle()

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
-import UserLogin from './components/user/userLogin';
-import UserRegister from './components/user/userRegister';
-import Home from './components/dashboard/home';
-import Layout from './components/layout';
+import UserLogin from './components/user/userLogin.jsx';
+import UserRegister from './components/user/userRegister.jsx';
+import Home from './components/dashboard/home.jsx';
+import Layout from './components/layout.jsx';
 
 const routes = (
   <Router history={hashHistory}>
