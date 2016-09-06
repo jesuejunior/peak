@@ -24,6 +24,12 @@ import imagemin from 'gulp-imagemin';
 import pngquant from 'imagemin-pngquant';
 import runSequence from 'run-sequence';
 
+import rev from 'gulp-rev';
+import revReplace from 'gulp-rev-replace';
+import filter from 'gulp-filter';
+import csso from 'gulp-csso';
+import useref from 'gulp-useref';
+
 const paths = {
   bundle: 'app.js',
   entry: 'src/scripts/app.jsx',
@@ -135,11 +141,31 @@ gulp.task('watchTask', () => {
   gulp.watch(paths.srcLint, ['lint']);
 });
 
+gulp.task("index", () => {
+  var jsFilter = filter("src/public/js/app.js", { restore: true });
+  var cssFilter = filter("src/public/styles/mains.css", { restore: true });
+  var indexHtmlFilter = filter(['src/**/*', '!**/index.html'], { restore: true });
+
+  return gulp.src("src/index.html")
+    .pipe(useref())      // Concatenate with gulp-useref
+    .pipe(jsFilter)
+    .pipe(uglify())             // Minify any javascript sources
+    .pipe(jsFilter.restore)
+    .pipe(cssFilter)
+    .pipe(csso())               // Minify any CSS sources
+    .pipe(cssFilter.restore)
+    .pipe(indexHtmlFilter)
+    .pipe(rev())                // Rename the concatenated files (but not index.html)
+    .pipe(indexHtmlFilter.restore)
+    .pipe(revReplace())         // Substitute in new filenames
+    .pipe(gulp.dest('src/public'));
+});
+
 gulp.task('watch', cb => {
   runSequence('clean', ['browserSync', 'watchTask', 'watchify', 'styles', 'lint', 'images'], cb);
 });
 
 gulp.task('build', cb => {
   process.env.NODE_ENV = 'production';
-  runSequence('clean', ['browserify', 'styles', 'htmlReplace', 'images'], cb);
+  runSequence('clean', ['browserify', 'styles', 'htmlReplace', 'images', 'index'], cb);
 });
