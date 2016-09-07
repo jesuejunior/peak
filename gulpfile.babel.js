@@ -1,149 +1,70 @@
 'use strict';
 
-import gulp from 'gulp';
-import autoprefixer from 'autoprefixer';
-import browserify from 'browserify';
-import watchify from 'watchify';
-import source from 'vinyl-source-stream';
-import buffer from 'vinyl-buffer';
-import eslint from 'gulp-eslint';
-import babelify from 'babelify';
-import uglify from 'gulp-uglify';
-import rimraf from 'rimraf';
-import notify from 'gulp-notify';
-import browserSync, { reload } from 'browser-sync';
-import sourcemaps from 'gulp-sourcemaps';
-import postcss from 'gulp-postcss';
-import rename from 'gulp-rename';
-import nested from 'postcss-nested';
-import vars from 'postcss-simple-vars';
-import extend from 'postcss-simple-extend';
-import cssnano from 'cssnano';
-import htmlReplace from 'gulp-html-replace';
-import imagemin from 'gulp-imagemin';
-import pngquant from 'imagemin-pngquant';
-import runSequence from 'run-sequence';
+var gulp         = require('gulp');
+var browserSync  = require('browser-sync');
+var concat       = require('gulp-concat');
+var eslint       = require('gulp-eslint');
+var filter       = require('gulp-filter');
+var reload       = browserSync.reload;
+var css          = require('gulp-css');
+var rev          = require('gulp-rev');
+var revReplace   = require('gulp-rev-replace');
+var uglify       = require('gulp-uglify');
+var csso         = require('gulp-csso');
+var useref       = require('gulp-useref');
+var clean        = require('gulp-clean');
+var babelify     = require('babelify');
+var source       = require('vinyl-source-stream');
+var buffer       = require('vinyl-buffer');
+var sourcemaps   = require('gulp-sourcemaps');
+var browserify   = require('browserify');
+var watchify     = require('watchify');
 
-import rev from 'gulp-rev';
-import revReplace from 'gulp-rev-replace';
-import filter from 'gulp-filter';
-import csso from 'gulp-csso';
-import useref from 'gulp-useref';
 
-const paths = {
-  bundle: 'app.js',
-  entry: 'src/scripts/app.jsx',
-  srcCss: 'src/**/*.scss',
-  srcImg: 'src/images/**',
-  srcLint: ['src/**/*.jsx', 'test/**/*.jsx'],
-  dist: 'src/public',
-  distJs: 'src/public/js',
-  distImg: 'src/public/images',
-  distDeploy: './public/**/*'
-};
-
-const customOpts = {
-  entries: [paths.entry],
-  debug: true,
-  cache: {},
-  packageCache: {}
-};
-
-const opts = Object.assign({}, watchify.args, customOpts);
-
-gulp.task('clean', cb => {
-  rimraf('dist', cb);
-});
-
-gulp.task('browserSync', () => {
-  browserSync({
-    server: {
-      baseDir: './src'
-    }
-  });
-});
-
-gulp.task('watchify', () => {
-  const bundler = watchify(browserify(opts));
-
-  function rebundle() {
-    return bundler.bundle()
-      .on('error', notify.onError())
-      .pipe(source(paths.bundle))
-      .pipe(buffer())
-      .pipe(sourcemaps.init({ loadMaps: true }))
-      .pipe(sourcemaps.write('.'))
-      .pipe(gulp.dest(paths.distJs))
-      .pipe(reload({ stream: true }));
-  }
-
-  bundler.transform(babelify)
-  .on('update', rebundle);
-  return rebundle();
-});
-
-gulp.task('browserify', () => {
-  browserify({
-    debug: true,
-    entries: paths.entry,
-    extensions: ["jsx", "js", " "],
-    transform: [ babelify ]
-  })
-  .bundle()
-  .pipe(source(paths.bundle))
-  .pipe(buffer())
-  .pipe(sourcemaps.init({ loadMaps: true }))
-  .pipe(uglify())
-  .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(paths.distJs));
-});
-
-gulp.task('styles', () => {
-  gulp.src(paths.srcCss)
-  .pipe(rename({ extname: '.css' }))
-  .pipe(sourcemaps.init())
-  .pipe(postcss([vars, extend, nested, autoprefixer, cssnano]))
-  .pipe(sourcemaps.write('.'))
-  .pipe(gulp.dest(paths.dist))
-  .pipe(reload({ stream: true }));
-});
-
-gulp.task('htmlReplace', () => {
-  gulp.src('index.html')
-  .pipe(htmlReplace({ css: 'styles/main.css', js: 'js/app.js' }))
-  .pipe(gulp.dest(paths.dist));
-});
-
-gulp.task('images', () => {
-  gulp.src(paths.srcImg)
-    .pipe(imagemin({
-      progressive: true,
-      svgoPlugins: [{ removeViewBox: false }],
-      use: [pngquant()]
-    }))
-    .pipe(gulp.dest(paths.distImg));
-});
-
-gulp.task('lint', () => {
-  gulp.src(paths.srcLint)
+// Lint JS/JSX files
+gulp.task('eslint', function() {
+  return gulp.src('src/**/*.js*')
     .pipe(eslint({
       baseConfig: {
         "parseOptions": {
-            "parser": "babel-eslint"
+            "parser":"babel-eslint"
         }
       }
     }))
-    .pipe(eslint.format());
+    .pipe(eslint.format())
+    .pipe(eslint.failAfterError());
 });
 
-gulp.task('watchTask', () => {
-  gulp.watch(paths.srcCss, ['styles']);
-  gulp.watch(paths.srcLint, ['lint']);
+gulp.task('jsx', ['eslint'], function() {
+    var b =  watchify(
+    browserify({
+      entries: ['./src/jsx/app.jsx'],
+      debug: true,
+      extensions: [' ', 'js', 'jsx']
+    })
+    .transform(babelify.configure({
+      presets: ["es2015", 'react']
+    })))
+    return b.bundle()
+    .on('error', function(err) { console.error(err); this.emit('end'); })
+    .pipe(source('app.jsx'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    .pipe(sourcemaps.write('./'))
+    // .pipe(uglify())
+    .pipe(gulp.dest('./public'));
 });
 
-gulp.task("index", () => {
-  var jsFilter = filter("src/public/js/app.js", { restore: true });
-  var cssFilter = filter("src/public/styles/mains.css", { restore: true });
+gulp.task('img', function() {
+  gulp.src('./src/img/*')
+    .pipe(gulp.dest('./public/img'));
+  gulp.src('./src/img/favicon.ico')
+    .pipe(gulp.dest('./public'));
+});
+
+gulp.task("index", function() {
+  var jsFilter = filter("public/app.jsx", { restore: true });
+  var cssFilter = filter("src/**/*.css", { restore: true });
   var indexHtmlFilter = filter(['src/**/*', '!**/index.html'], { restore: true });
 
   return gulp.src("src/index.html")
@@ -158,14 +79,33 @@ gulp.task("index", () => {
     .pipe(rev())                // Rename the concatenated files (but not index.html)
     .pipe(indexHtmlFilter.restore)
     .pipe(revReplace())         // Substitute in new filenames
-    .pipe(gulp.dest('src/public'));
+    .pipe(gulp.dest('public'));
 });
 
-gulp.task('watch', cb => {
-  runSequence('clean', ['browserSync', 'watchTask', 'watchify', 'styles', 'lint', 'images'], cb);
+gulp.task('clean', function () {
+  return gulp.src('public', {read: false})
+    .pipe(clean({force: true}));
 });
 
-gulp.task('build', cb => {
-  process.env.NODE_ENV = 'production';
-  runSequence('clean', ['browserify', 'styles', 'htmlReplace', 'images', 'index'], cb);
+// Watch JS/JSX and Sass files
+gulp.task('watch', function() {
+  gulp.watch('src/**/*.{js,jsx,html}', ['jsx', 'index']);
+  gulp.watch('css/**/*.css', ['css']);
+  gulp.watch('img/**/*.{png,jpg}', ['img']);
 });
+
+// BrowserSync
+gulp.task('browsersync', function() {
+  browserSync({
+    server: {
+      baseDir: './public'
+    },
+    port: 8000,
+    open: false,
+    online: false,
+    notify: false,
+  });
+});
+
+gulp.task('build', ['jsx', 'index', 'img']);
+gulp.task('default', ['build', 'browsersync', 'watch']);

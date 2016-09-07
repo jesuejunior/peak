@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Peak Dashboard</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="public/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="public/images/favicon.ico" type="image/x-icon">
-    <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300' rel='stylesheet' type='text/css'>
+    <head>
+        <meta charset="UTF-8">
 
-    <!-- build:css -->
-    <link rel="stylesheet" href="public/styles/main.css">
-    <!-- endbuild -->
-  </head>
-  <body>
-    <div id="content"></div>
+        <title>Peak Dashboard</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/favicon.ico" type="image/x-icon">
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,300' rel='stylesheet' type='text/css'>
+ 
+        <!-- build:css css/vendor.css -->
+        <link rel="stylesheet" href="css/pure-min.css">
+        <!-- endbuild -->
 
-    <!-- build:jsx -->
-    <script src="public/js/app.js"></script>
-    <!-- endbuild -->
-  </body>
+       <!-- build:css css/portal.css -->
+        <link rel="stylesheet" href="css/portal.css">
+        <!-- endbuild -->
+
+        <!-- build:js js/vendor.js -->
+        <script src="../node_modules/react/dist/react-with-addons.min.js"></script>
+        <script src="../node_modules/react-dom/dist/react-dom.min.js"></script>
+        <!-- endbuild -->
+    <body>
+        <div id="peakApp"></div>
+        <script src="app.jsx"></script>
+        <!-- endbuild -->
+    </body>
 </html>
