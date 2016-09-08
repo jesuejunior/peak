@@ -28,7 +28,7 @@ gulp.task('eslint', function() {
       baseConfig: {
         "parseOptions": {
             "parser":"babel-eslint"
-        } 
+        }
       }
     }))
     .pipe(eslint.format())
@@ -38,7 +38,7 @@ gulp.task('eslint', function() {
 gulp.task('jsx', ['eslint'], function() {
     var b =  watchify(
     browserify({
-      entries: ['./src/app.jsx'],
+      entries: ['./src/jsx/app.jsx'],
       debug: true,
       extensions: [' ', 'js', 'jsx']
     })
