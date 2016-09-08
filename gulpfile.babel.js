@@ -38,7 +38,7 @@ gulp.task('eslint', function() {
 gulp.task('jsx', ['eslint'], function() {
     var b =  watchify(
     browserify({
-      entries: ['./src/jsx/app.jsx'],
+      entries: ['./src/app.jsx'],
       debug: true,
       extensions: [' ', 'js', 'jsx']
     })
