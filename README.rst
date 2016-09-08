@@ -14,7 +14,7 @@ Development mode
     $ npm i
 
 
-..code-block:: shell
+.. code-block:: shell
 
     $ npm start
 
@@ -25,7 +25,7 @@ Tests
 
 To Run tests:
 
-..code-block:: shell
+.. code-block:: shell
 
     $ npm test
 
