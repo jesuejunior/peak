@@ -1,8 +1,10 @@
-body {
-    font-family: 'Ubuntu', sans-serif;
+
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    /* Set your content font stack here: */
+    font-family: 'Ubuntu', Georgia, Times, "Times New Roman", serif;
     font-weight: 300;
 }
-
 
 /*Menu Start*/
 
