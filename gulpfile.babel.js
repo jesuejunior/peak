@@ -90,7 +90,7 @@ gulp.task('clean', function () {
 // Watch JS/JSX and Sass files
 gulp.task('watch', function() {
   gulp.watch('src/**/*.{js,jsx,html}', ['jsx', 'index']);
-  gulp.watch('src/css/**/*.css', ['css']);
+  gulp.watch('src/css/**/*.css', ['index']);
   gulp.watch('src/img/**/*.{png,jpg}', ['img']);
 });
 
@@ -107,5 +107,5 @@ gulp.task('browsersync', function() {
   });
 });
 
-gulp.task('build', ['clean', 'jsx', 'index', 'img']);
+gulp.task('build', [ 'jsx', 'index', 'img']);
 gulp.task('default', ['build', 'browsersync', 'watch']);
