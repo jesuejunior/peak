@@ -118,6 +118,14 @@ html, button, input, select, textarea,
     z-index: -1;
 }
 
+.pure-menu-link active {
+    color: #4C007F;
+    background-color: transparent;
+    padding-bottom: 5px ;
+    border-bottom: 2px solid #4C007F;
+
+}
+
 .custom-menu-tucked .custom-menu-screen {
     -webkit-transform: translateY(-44px);
     -moz-transform: translateY(-44px);

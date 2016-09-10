@@ -8,8 +8,8 @@ const routes = (
   <Router history={hashHistory}>
     <Route path="/" header="Dashboard" component={Layout}>
       <IndexRoute component={Home} />
-      <Route path="login" header="Login" component={UserLogin} />
-      <Route path="register" header="Register" component={UserRegister} />
+      <Route path="users/login" header="Login" component={UserLogin} />
+      <Route path="users/new" header="Register" component={UserRegister} />
     </Route>
   </Router>
 );

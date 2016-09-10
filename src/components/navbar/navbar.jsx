@@ -14,10 +14,11 @@ export default class Navbar extends React.Component {
               <div className="custom-menu-screen"></div>
               <ul className="pure-menu-list">
                 <li className="pure-menu-item"> <Link to='/home' activeClassName="active" className="pure-menu-link">Home</Link></li>
-                <li className="pure-menu-item"><a href="#" className="pure-menu-link">Containers</a></li>
-                <li className="pure-menu-item"><a href="#" className="pure-menu-link">Expeditions</a></li>
-                <li className="pure-menu-item"><a href="#" className="pure-menu-link">Images</a></li>
-                <li className="pure-menu-item"><a href="#" className="pure-menu-link">Networks</a></li>
+                 {/* IF logged show it  */}
+                <li className="pure-menu-item"><Link to='/containers' activeClassName='active'  className="pure-menu-link">Containers</Link></li>
+                <li className="pure-menu-item"><Link to='/expeditions' className="pure-menu-link">Expeditions</Link></li>
+                <li className="pure-menu-item"><Link to='/images' className="pure-menu-link">Images</Link></li>
+                <li className="pure-menu-item"><Link to='/networks' className="pure-menu-link">Networks</Link></li>
                 <li className="pure-menu-item"><a href="#" className="pure-menu-link">Nodes</a></li>
                 <li className="pure-menu-item"><a href="#" className="pure-menu-link">Volumes</a></li>
                 <li className="pure-menu-item pure-menu-has-children pure-menu-allow-hover">
@@ -27,6 +28,8 @@ export default class Navbar extends React.Component {
                     <li className="pure-menu-item"><a href="#" className="clickable pure-menu-link" >Logout</a></li>
                   </ul>
                 </li>
+                 {/* If note logged show it */}
+                 <li className="pure-menu-item"><Link to='/users/login' activeClassName='active'  className="pure-menu-link"> Login</Link></li>
               </ul>
             </div>
           </div>
