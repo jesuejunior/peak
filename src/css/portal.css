@@ -63,10 +63,15 @@ html, button, input, select, textarea,
 }
 
 .custom-menu-brand {
-    /* url('img/logo-peak.png'); */
+    background-image: url('../img/logo_gray.png');
     display: block;
     text-align: center;
     position: relative;
+    width: 65px;
+    height: 32px;
+    margin: 10px 15px 5px 19px;;
+    background-repeat: no-repeat;
+    background-position: center; 
 }
 
 .custom-menu-toggle {

@@ -6,7 +6,7 @@ export default class Navbar extends React.Component {
     return(
           <div className="custom-menu-wrapper">
             <div className="pure-menu custom-menu custom-menu-top">
-              <Link to='/home' className="pure-menu-heading custom-menu-brand logo">Peak</Link>
+              <Link to='/' className="custom-menu-brand logo"></Link>
               <a href="#" className="custom-menu-toggle" id="toggle"></a>
             </div>
             <div className="pure-menu pure-menu-horizontal custom-menu custom-menu-bottom custom-menu-tucked" id="tuckedMenu">
