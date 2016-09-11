@@ -40,9 +40,9 @@ export default class UserLogin extends React.Component {
             <label htmlFor="password" className="sr-only">Password</label>
             <input type="password" placeholder="Password" value={this.state.password} onChange={this.handlePasswordChange.bind(this)} />
 
-            <label htmlFor="remember" className="pure-checkbox"></label>
-            <input type="checkbox" value="Remember me" />
-
+            <label htmlFor="remember" className="pure-checkbox">Remember me.
+              <input type="checkbox" value="remember" />
+            </label>
             <input className="pure-button pure-button-primary" type="submit" value="Sign in" />
           </fieldset>
         </form>

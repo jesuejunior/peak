@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 export default class Navbar extends React.Component {
   render() {
     return(
-        <div>
           <div className="custom-menu-wrapper">
             <div className="pure-menu custom-menu custom-menu-top">
               <Link to='/home' className="pure-menu-heading custom-menu-brand logo">Peak</Link>
@@ -33,7 +32,6 @@ export default class Navbar extends React.Component {
               </ul>
             </div>
           </div>
-        </div>
       );
   }
 }
