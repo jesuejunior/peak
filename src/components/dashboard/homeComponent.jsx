@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-export default class Home extends React.Component {
-  render() {
+export default function HomeComponent(props) {
     return (
       <div className="pure-g">
         <h3> Peak Dashboard </h3>
@@ -14,5 +13,4 @@ export default class Home extends React.Component {
         </Link>
       </div>
     );
-  }
 }
