@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function UserLogin () {
+export default function UserLogin (props) {
   return (
     <div className="container login-container">
       <form className="pure-form pure-form-stacked" onSubmit={props.handleSubmit}>
@@ -8,10 +8,10 @@ export default function UserLogin () {
           <legend>Please sign in</legend>
           <label htmlFor="email" >Email address</label>
 
-          <input type="email" placeholder="Email address" value={props.email} onChange={props.handleEmailChange.bind(this)} />
+          <input type="email" placeholder="Email address" value={props.email} onChange={props.handleEmailChange} />
 
           <label htmlFor="password" className="sr-only">Password</label>
-          <input type="password" placeholder="Password" value={props.password} onChange={props.handlePasswordChange.bind(this)} />
+          <input type="password" placeholder="Password" value={props.password} onChange={props.handlePasswordChange} />
 
           <label htmlFor="remember" className="pure-checkbox">Remember me.
             <input type="checkbox" value="remember" />

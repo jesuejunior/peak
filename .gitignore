@@ -10,3 +10,4 @@ app/constants.js
 dist/
 app.built.js
 public/
+.vscode/
