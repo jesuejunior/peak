@@ -1,11 +1,9 @@
 import React from 'react';
 
-export default class UserRegister extends React.Component {
-  render() {
-    return (
-      <div className="">
-        register FORM
-      </div>
-    );
-  }
+export default function UserRegister (props) {
+  return (
+    <div className="">
+      register FORM
+    </div>
+  );
 }

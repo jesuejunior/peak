@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-export default function HomeComponent(props) {
+export default function Home (props) {
     return (
       <div className="pure-g">
         <h3> Peak Dashboard </h3>
