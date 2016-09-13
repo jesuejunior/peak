@@ -14,7 +14,7 @@ export default class UserLoginContainer extends React.Component {
   }
 
   componentWillMount() {
-    UserStore.on("change", );
+    UserStore.on("change", this.state);
   }
 
   handleEmailChange(e) {
