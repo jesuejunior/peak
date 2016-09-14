@@ -1,28 +1,32 @@
 import React from 'react';
 import UserLogin from '../../components/user/userLogin.jsx';
-import { authUser } from '../../actions/UserActions.jsx';
+import { authUserAction } from '../../actions/UserActions.jsx';
+import UserStore from '../../stores/UserStore.jsx';
 
 export default class UserLoginContainer extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { 
-      user: {
-        email: '', password: ''
-      } 
-    };
+    this.state = { email: '', password: '' };
   }
 
   componentWillMount() {
-    UserStore.on("change", this.state);
+    UserStore.on("change", () => {
+      console.log('Dados recebidos do login!');
+      console.log('User logado ', UserStore.getUser());
+    });
+  }
+
+  componentWillUnmount() {
+    UserStore.removeListener("change");
   }
 
   handleEmailChange(e) {
-    this.setState({ user: { email: e.target.value } });
+    this.setState({ email: e.target.value });
   }
 
   handlePasswordChange(e) {
-    this.setState({ user: { password: e.target.value } });
+    this.setState({ password: e.target.value });
   }
 
   handleSubmit(e) {
@@ -32,22 +36,17 @@ export default class UserLoginContainer extends React.Component {
     if (!email || !password) {
       return;
     }
-
-    const user = authUser(email, password);
-
-    console.log(user);
-     // TODO: send request to the server
-    // this.setState({ email, password });
-    // console.log(email, password);
+    
+    authUserAction(email, password);
   }
 
   render() {
     return (
       <UserLogin
-        password={this.state.user.password}
-        email={this.state.user.email}
-        handlePasswordChange={this.handlePasswordChange.bind(this)}
+        email={this.state.email}
+        password={this.state.password}
         handleEmailChange={this.handleEmailChange.bind(this)}
+        handlePasswordChange={this.handlePasswordChange.bind(this)}
         handleSubmit={this.handleSubmit.bind(this)} />
     );
   }

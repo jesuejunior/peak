@@ -3,21 +3,26 @@ import AppDispatcher from '../dispatcher/AppDispatcher.jsx';
 import AuthService from '../services/AuthService.jsx';
 import UserConstants from '../constants/UserConstants.jsx';
 
+var _user = {};
+
 class UserStore extends EventEmitter {
 	constructor() {
 		super();
-		this._user = {};
 	}
 
-	getUser(username, password) {
-		this._user = AuthService.login(username, password);
+	requestLogin(username, password) {
+		_user = AuthService.login(username, password);
 		this.emit("change");
 	}
+
+  getUser() {
+    return _user;
+  }
 
 	handleActions(action) {
 		switch (action.type) {
 			case UserConstants.AUTHENTICATE_USER: {
-				this.getUser(action.user.username, action.user.password);
+				this.requestLogin(action.user.username, action.user.password);
 				break;
 			}
 			case UserConstants.GET_AUTH_USER: {

@@ -11,3 +11,4 @@ dist/
 app.built.js
 public/
 .vscode/
+jsconfig.json
