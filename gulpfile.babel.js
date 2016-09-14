@@ -1,25 +1,25 @@
 'use strict';
 
-var gulp         = require('gulp');
-var browserSync  = require('browser-sync');
-var concat       = require('gulp-concat');
-var eslint       = require('gulp-eslint');
-var filter       = require('gulp-filter');
-var reload       = browserSync.reload;
-var css          = require('gulp-css');
-var rev          = require('gulp-rev');
-var revReplace   = require('gulp-rev-replace');
-var uglify       = require('gulp-uglify');
-var csso         = require('gulp-csso');
-var useref       = require('gulp-useref');
-var clean        = require('gulp-clean');
-var babelify     = require('babelify');
-var source       = require('vinyl-source-stream');
-var buffer       = require('vinyl-buffer');
-var sourcemaps   = require('gulp-sourcemaps');
-var browserify   = require('browserify');
-var watchify     = require('watchify');
+import gulp from 'gulp';
+import browserSync from 'browser-sync';
+import contac from 'gulp-concat';
+import eslint from 'gulp-eslint';
+import filter from 'gulp-filter';
+import css from 'gulp-css';
+import rev from 'gulp-rev';
+import revReplace from 'gulp-rev-replace';
+import uglify from 'gulp-uglify';
+import csso from 'gulp-csso';
+import useref from 'gulp-useref';
+import clean from 'gulp-clean';
+import babelify from 'babelify';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
+import sourcemaps from 'gulp-sourcemaps';
+import browserify from 'browserify';
+import watchify from 'watchify';
 
+const reload = browserSync.reload;
 
 // Lint JS/JSX files
 gulp.task('eslint', function() {
