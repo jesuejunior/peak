@@ -1,6 +1,6 @@
 import React from 'react';
 import UserLogin from '../../components/user/userLogin.jsx';
-import { authUserAction } from '../../actions/UserActions.jsx';
+import { authUserAction } from '../../actions/userActions.jsx';
 import UserStore from '../../stores/UserStore.jsx';
 
 export default class UserLoginContainer extends React.Component {
@@ -36,7 +36,7 @@ export default class UserLoginContainer extends React.Component {
     if (!email || !password) {
       return;
     }
-    
+
     authUserAction(email, password);
   }
 

@@ -11,9 +11,9 @@ export function authUserAction(email, password) {
   });
 }
 
-export function getAuthUserAction(username) {
+export function getAuthUserAction(token) {
   AppDispatcher.dispatch({
     type: UserConstants.GET_AUTH_USER,
-    username
+    token
   });
 }
