@@ -5,7 +5,7 @@ export default function Layout (props) {
   return(
     <div className="pure-u-1">
       <Navbar />
-      <div className='content'>
+      <div className="content">
         {props.children}
       </div>
     </div>
