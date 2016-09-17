@@ -1,7 +1,7 @@
 import React from 'react';
 import UserLogin from '../../components/user/userLogin.jsx';
-import { authUserAction } from '../../actions/userActions.jsx';
-import UserStore from '../../stores/UserStore.jsx';
+import AuthService from '../../services/AuthService.jsx';
+import AuthStore from '../../stores/AuthStore.jsx';
 
 export default class UserLoginContainer extends React.Component {
 
@@ -10,15 +10,12 @@ export default class UserLoginContainer extends React.Component {
     this.state = { email: '', password: '' };
   }
 
-  componentWillMount() {
-    UserStore.on("change", () => {
-      console.log('Dados recebidos do login!');
-      console.log('User logado ', UserStore.getUser());
-    });
+  componentDidMount() {
+    AuthStore.addChangeListener(this._onChange.bind(this));
   }
 
   componentWillUnmount() {
-    UserStore.removeListener("change");
+    AuthStore.removeChangeListener(this._onChange.bind(this));
   }
 
   handleEmailChange(e) {
@@ -37,7 +34,11 @@ export default class UserLoginContainer extends React.Component {
       return;
     }
 
-    authUserAction(email, password);
+    AuthService.login(email, password);
+  }
+
+  _onChange() {
+    console.log('User logado');
   }
 
   render() {
