@@ -1,13 +1,21 @@
 import axios from 'axios';
+import * as AuthAction from '../actions/authActions.jsx';
 
-class AuthService {
-  login(username, password) {
+const AuthService = {
+  login: function(email, password) {
+    // request login
+    const token = 'JWT a9s8dasdj.as0d8asuj0.0as09djas';
+
+    AuthAction.authUserAction(token);
+
     return {
-      id: 1,
-      username: 'auser01',
-      token: 'JWT a9s8dasdj.as0d8asuj0.0as09djas'
+      token
     };
+  },
+
+  logout: function() {
+    logoutUserAction();
   }
 }
 
-export default new AuthService;
+export default AuthService;

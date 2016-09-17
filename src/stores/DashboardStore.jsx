@@ -1,19 +1,18 @@
-import { EventEmitter } from 'events';
+import BaseStore from './BaseStore';
 import AppDispatcher from '../dispatcher/AppDispatcher';
 
-class DashboardStore extends EventEmitter {
+_nodes = [];
+
+class DashboardStore extends BaseStore {
     constructor() {
-        super();
-        this._nodes = [];
+      super();
     }
 
-    getAll() {
-        return this._nodes;
+    getAllNodes() {
+      return _nodes;
     }
 
-    handleActions() {
-
-    }
+    handleActions() {}
 }
 
 const dashboardStore = new DashboardStore;

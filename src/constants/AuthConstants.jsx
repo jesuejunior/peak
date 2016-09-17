@@ -1,6 +1,7 @@
 import keyMirror from 'keymirror';
 
 export default keyMirror({
-    GET_AUTH_USER: null,
-    AUTHENTICATE_USER: null
+  LOGIN_USER: null,
+  LOGOUT_USER: null,
+  LOGGED_USER: null
 });
