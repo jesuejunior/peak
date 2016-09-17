@@ -5,7 +5,8 @@ import { Link } from 'react-router';
 import UserRegister from '../userRegister.jsx';
 
 it('should render UserRegister Component', () => {
-  const userRegister = TestUtils.renderIntoDocument(<UserRegister />);
+  const props = {};
+  const userRegister = TestUtils.renderIntoDocument(UserRegister(props));
   const userRegisterNode = ReactDOM.findDOMNode(userRegister);
 
   expect(userRegisterNode.textContent).toEqual('register FORM');

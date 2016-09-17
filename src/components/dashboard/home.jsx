@@ -1,18 +1,26 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-export default class Home extends React.Component {
-  render() {
-    return (
-      <div className="pure-g">
+export default function Home (props) {
+  return (
+    <div className="pure-g">
+      <div className="pure-u-1">
         <h3> Peak Dashboard </h3>
-        <div>
-          Teste
-        </div>
-        <Link to="/login">
+        <Content />
+      </div>
+    </div>
+  );
+}
+
+
+function Content (props) {
+  return (
+    <div className="pure-g">
+      <div className="pure-u-1">
+        <Link to="/users/login">
           Login
         </Link>
       </div>
-    );
-  }
+    </div>
+  );
 }

@@ -5,7 +5,8 @@ import { Link } from 'react-router';
 import UserLogin from '../userLogin.jsx';
 
 it('should render UserLogin Component', () => {
-  const userLogin = TestUtils.renderIntoDocument(<UserLogin />);
+  const props = {};
+  const userLogin = TestUtils.renderIntoDocument(UserLogin(props));
   const userLoginNode = ReactDOM.findDOMNode(userLogin);
 
   expect(userLoginNode.textContent.indexOf('Please sign in') !== -1).toBe(true);
