@@ -3,11 +3,9 @@ import { Link } from 'react-router';
 
 export default function Home (props) {
   return (
-    <div className="pure-g">
-      <div className="pure-u-1">
-        <h3> Peak Dashboard </h3>
-        <Content />
-      </div>
+    <div className="dashboard">
+      <h3>Overview</h3>
+      <Content />
     </div>
   );
 }
@@ -15,11 +13,46 @@ export default function Home (props) {
 
 function Content (props) {
   return (
-    <div className="pure-g">
-      <div className="pure-u-1">
-        <Link to="/users/login">
-          Login
-        </Link>
+    <div className="dashboardContent">
+      <div className="pure-g">
+        <div className="pure-u-1-4 pure-u-sm-1-2">
+          <div className="box">
+            <h4>Expeditions</h4>
+            <p className="value">0</p>
+          </div>
+        </div>
+        <div className="pure-u-1-4 pure-u-sm-1-2">
+          <div className="box">
+            <h4>Containers</h4>
+            <p className="value">8</p>
+          </div>
+        </div>
+        <div className="pure-u-1-4 pure-u-sm-1-2">
+          <div className="box">
+            <h4>Images</h4>
+            <p className="value">8</p>
+          </div>
+        </div>
+        <div className="pure-u-1-4 pure-u-sm-1-2">
+          <div className="box">
+            <h4>Nodes</h4>
+            <p className="value">1</p>
+          </div>
+        </div>
+      </div>
+      <div className="pure-g">
+        <div className="pure-u-1-2 pure-u-sm-1-1">
+          <div className="box">
+            <h4>CPU</h4>
+            <p className="graph-value">0%</p>
+          </div>
+        </div>
+        <div className="pure-u-1-2 pure-u-sm-1-1">
+          <div className="box">
+            <h4>Memory</h4>
+            <p className="graph-value">0%</p>
+          </div>
+        </div>
       </div>
     </div>
   );

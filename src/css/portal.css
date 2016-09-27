@@ -10,20 +10,32 @@ html, button, input, select, textarea,
     font-weight: 300;
 }
 .pure-g > *{
-        letter-spacing: 0.01em;
-        font-family: 'Ubuntu', Georgia, Times, "Times New Roman", serif;
-        /* font-weight: 300; */
+    letter-spacing: 0.01em;
+    font-family: 'Ubuntu', Georgia, Times, "Times New Roman", serif;
+    /* font-weight: 300; */
 }
+
+/* Content Start */
+
+.content {
+    /*margin: auto 50px;
+    padding: 0 2em;
+    max-width: 800px;
+    margin-bottom: 50px;
+    line-height: 1.6em;*/
+    width: 980px;
+    margin: 0 auto;
+}
+
+/* Content End */
 
 /*Menu Start*/
 
-.custom-menu-wrapper {
-    background-color: white;
-    margin-bottom: 2em;
-    /* margin-top: 1em; */
-    white-space: nowrap;
-    margin-left: 65px;
-    position: relative;
+.navbar {
+    background-color: #fafafa;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #ccc;
+    height: 3.7em;
 }
 
 .custom-menu {
@@ -31,6 +43,14 @@ html, button, input, select, textarea,
     width: auto;
     vertical-align: middle;
     -webkit-font-smoothing: antialiased;
+}
+
+.custom-menu.pure-menu-horizontal {
+    float: right;
+}
+
+.custom-menu .pure-menu-has-children > .pure-menu-link:hover {
+    border-bottom-color: #fafafa;
 }
 
 .custom-menu .pure-menu-link,
@@ -69,9 +89,8 @@ html, button, input, select, textarea,
     position: relative;
     width: 65px;
     height: 32px;
-    margin: 10px 15px 5px 19px;;
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
 }
 
 .custom-menu-toggle {
@@ -196,15 +215,43 @@ html, button, input, select, textarea,
     }
 
 }
-
 /*Menu End*/
 
-/* Content Start */
-
-.content {
-    margin: auto 50px;
-    padding: 0 2em;
-    max-width: 800px;
-    margin-bottom: 50px;
-    line-height: 1.6em;
+/* Dashboard Start */
+.dashboard .box {
+    background-color: #eee;
+    margin: 2em;
+    padding-bottom: 2em;
 }
+
+.dashboard .box h4 {
+    background-color: #8156a7;
+    color: white;
+    display: inline-block;
+    font-weight: normal;
+    margin-top: .8em;
+    margin-left: -.6em;
+    padding: 1em;
+}
+
+.dashboard .box .value {
+    font-size: 5em;
+    margin: 0;
+    text-align: center;
+}
+
+.dashboard .box .graph-value {
+    text-align: center;
+}
+/* Dashboard End */
+
+/* Footer Start */
+.footer {
+    position: fixed;
+    bottom: 0;
+    height: 3em;
+    background-color: #fafafa;
+    border-top: 1px solid #ccc;
+    width: 100%;
+}
+/* Footer End */
