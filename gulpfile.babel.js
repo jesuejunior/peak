@@ -58,7 +58,7 @@ gulp.task('jsx', ['eslint'], function() {
 gulp.task('img', function() {
   gulp.src('./src/img/*')
     .pipe(gulp.dest('./public/img'));
-  gulp.src('./src/img/favicon.ico')
+  gulp.src('./src/img/favicon.png')
     .pipe(gulp.dest('./public'));
 });
 
