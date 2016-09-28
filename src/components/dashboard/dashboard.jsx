@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-export default function Home (props) {
+export default function Dashboard (props) {
   return (
     <div className="dashboard">
-      <h3>Overview</h3>
+      <h3>Dashboard</h3>
       <Content />
     </div>
   );

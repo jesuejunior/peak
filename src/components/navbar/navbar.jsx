@@ -6,13 +6,13 @@ export default function Navbar (props) {
     <div className="navbar">
       <div className="content">
         <div className="pure-menu custom-menu custom-menu-top">
-          <Link to='/' className="custom-menu-brand logo"></Link>
+          <Link to='/dashboard' className="custom-menu-brand logo"></Link>
           <a href="#" className="custom-menu-toggle" id="toggle"></a>
         </div>
         <div className="pure-menu pure-menu-horizontal custom-menu custom-menu-bottom custom-menu-tucked" id="tuckedMenu">
           <div className="custom-menu-screen"></div>
           <ul className="pure-menu-list">
-            <li className="pure-menu-item"> <Link to='/home' activeClassName="active" className="pure-menu-link">Home</Link></li>
+            <li className="pure-menu-item"> <Link to='/dashboard' activeClassName="active" className="pure-menu-link">Dashboard</Link></li>
              {/* IF logged show it  */}
             <li className="pure-menu-item"><Link to='/containers' activeClassName='active'  className="pure-menu-link">Containers</Link></li>
             <li className="pure-menu-item"><Link to='/expeditions' className="pure-menu-link">Expeditions</Link></li>
