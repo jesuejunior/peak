@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
-import Home from '../home.jsx';
+import Dashboard from '../dashboard.jsx';
 
-it('should render Home Component', () => {
+it('should render Dashboard Component', () => {
   const props = {};
-  const home = TestUtils.renderIntoDocument(Home(props));
-  const homeNode = ReactDOM.findDOMNode(home);
+  const dashboard = TestUtils.renderIntoDocument(Dashboard(props));
+  const dashboardNode = ReactDOM.findDOMNode(dashboard);
 
-  expect(homeNode.textContent.indexOf('Peak Dashboard') !== -1).toBe(true);
+  expect(dashboardNode.textContent.indexOf('Peak Dashboard') !== -1).toBe(true);
 });
