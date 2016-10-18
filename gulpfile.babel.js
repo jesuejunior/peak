@@ -64,6 +64,11 @@ gulp.task('img', function() {
     .pipe(gulp.dest('./public'));
 });
 
+gulp.task('fonts', function() {
+  gulp.src('./src/fonts/*')
+    .pipe(gulp.dest('./public/fonts'));
+});
+
 gulp.task('less', function () {
   return gulp.src('./src/less/**/*.less')
     .pipe(less({
@@ -103,6 +108,7 @@ gulp.task('watch', function() {
   gulp.watch('src/less/**/*.less', ['less', 'index']);
   gulp.watch('src/css/**/*.css', ['index']);
   gulp.watch('src/img/**/*.{png,jpg}', ['img']);
+  gulp.watch('src/fonts/**/*', ['fonts']);
 });
 
 // BrowserSync
@@ -118,5 +124,5 @@ gulp.task('browsersync', function() {
   });
 });
 
-gulp.task('build', [ 'less', 'img', 'jsx', 'index']);
+gulp.task('build', [ 'less', 'fonts', 'img', 'jsx', 'index']);
 gulp.task('default', ['build', 'browsersync', 'watch']);
