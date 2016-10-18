@@ -6,6 +6,21 @@ export default function Image (props) {
     <div className="image">
       <div className="content">
 
+        <div className="steps-selector pure-g">
+          <div className="pure-u-1-3 step highlight">
+            <div className="step-number">1</div>
+            <div className="step-text">Image selection</div>
+          </div>
+          <div className="pure-u-1-3 step">
+            <div className="step-number">2</div>
+            <div className="step-text">Service configuration</div>
+          </div>
+          <div className="pure-u-1-3 step">
+            <div className="step-number">3</div>
+            <div className="step-text">Environment variables</div>
+          </div>
+        </div>
+
         <div className="image-type">
           <a className="pure-button button-select" href="#">
             <i className="fa fa-rocket" aria-hidden="true"></i> Jumpstarts
