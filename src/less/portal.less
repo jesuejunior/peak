@@ -392,5 +392,19 @@ a.pure-button:hover, a.pure-menu-link:hover {
             width: 100%;
         }
     }
+
+    .image-properties {
+        // smaller on big viewports
+        @media (min-width: 65em){
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        // every left column
+        div:nth-child(odd){
+            text-align: right;
+            padding-right: 1em;
+        }
+    }
 }
 // Images End

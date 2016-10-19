@@ -90,6 +90,58 @@ export default function Image (props) {
           </div>
         </div>
 
+        <p>-------------------------------------------------------------------------------------------</p>
+
+        <div className="steps-selector pure-g">
+          <div className="pure-u-1-3 step highlight">
+            <div className="step-number"><i className="fa fa-check" aria-hidden="true"></i></div>
+            <div className="step-text">Image selection</div>
+          </div>
+          <div className="pure-u-1-3 step highlight">
+            <div className="step-number">2</div>
+            <div className="step-text">Service configuration</div>
+          </div>
+          <div className="pure-u-1-3 step">
+            <div className="step-number">3</div>
+            <div className="step-text">Environment variables</div>
+          </div>
+        </div>
+
+        <form className="pure-g pure-form image-properties">
+          <div className="pure-u-1-5">
+            <p>Image</p>
+          </div>
+          <div className="pure-u-4-5">
+            <p>peak/hello-world</p>
+          </div>
+          <div className="pure-u-1-5 pure-control-group label-for-input">
+            <label for="ServiceName">Service Name</label>
+          </div>
+          <div className="pure-u-4-5 pure-control-group">
+            <input id="ServiceName" type="text" placeholder="hello-world-01287ccf" value="hello-world-01287ccf" className="pure-input-1"/>
+          </div>
+          <div className="pure-u-1-5 pure-control-group">
+            <label for="ImageTag">Image tag</label>
+          </div>
+          <div className="pure-u-4-5 pure-control-group">
+            <select id="ImageTag" className="pure-input-1">
+              <option>latest</option>
+            </select>
+          </div>
+          <div className="pure-u-1-5 pure-control-group">
+            <label for="NumberOfContainers">Number of containers</label>
+          </div>
+          <div className="pure-u-4-5 pure-control-group">
+            <input id="NumberOfContainers" type="range" min="0" max="10" step="1" className="pure-input-1"/>
+          </div>
+          <div className="pure-u-1-5 pure-control-group">
+            <label for="DeployTags">Deploy tags</label>
+          </div>
+          <div className="pure-u-4-5 pure-control-group">
+            <input id="DeployTags" type="text" className="pure-input-1"/>
+          </div>
+        </form>
+
       </div>
     </div>
   );
