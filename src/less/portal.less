@@ -1,7 +1,8 @@
 /* @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,300'); */
 
-/* Variables */
-@roxinho: #8156a7;
+// Variables
+//@roxinho: #8156a7;
+@roxinho: #5f3264;
 
 body,html {
     font-family: 'Ubuntu', Georgia, Times, "Times New Roman", serif;
@@ -19,13 +20,17 @@ html, button, input, select, textarea,
     /* font-weight: 300; */
 }
 
-/* Fixes bootstrap underline in buttons */
+// Fixes bootstrap underline in buttons
 a.pure-button:hover, a.pure-menu-link:hover {
     text-decoration: none;
 }
 
-/* Content Start */
+// Changes pure primary button to main color
+.pure-button-primary, .pure-button-selected, a.pure-button-primary, a.pure-button-selected {
+    background-color: @roxinho;
+}
 
+// Content Start
 .content {
     /*margin: auto 50px;
     padding: 0 2em;
@@ -35,11 +40,9 @@ a.pure-button:hover, a.pure-menu-link:hover {
     width: 980px;
     margin: 0 auto;
 }
+// Content End
 
-/* Content End */
-
-/*Menu Start*/
-
+// Menu Start
 .navbar {
     background-color: #fafafa;
     margin-bottom: 1em;
@@ -224,9 +227,9 @@ a.pure-button:hover, a.pure-menu-link:hover {
     }
 
 }
-/*Menu End*/
+// Menu End
 
-/* Dashboard Start */
+// Dashboard Start
 .dashboard {
 
     .box {
@@ -255,9 +258,9 @@ a.pure-button:hover, a.pure-menu-link:hover {
         }
     }
 }
-/* Dashboard End */
+// Dashboard End
 
-/* Footer Start */
+// Footer Start
 .footer {
     position: fixed;
     bottom: 0;
@@ -266,9 +269,9 @@ a.pure-button:hover, a.pure-menu-link:hover {
     border-top: 1px solid #ccc;
     width: 100%;
 }
-/* Footer End */
+// Footer End
 
-/* Images Start */
+// Images Start
 .image {
     padding-bottom: 60px;
 
@@ -386,4 +389,4 @@ a.pure-button:hover, a.pure-menu-link:hover {
         }
     }
 }
-/* Images End */
+// Images End
