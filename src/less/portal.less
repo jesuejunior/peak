@@ -1,9 +1,10 @@
 /* @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,300'); */
 
-// Variables
+// General Variables
 //@roxinho: #8156a7;
 @roxinho: #5f3264;
 
+// General Rules
 body,html {
     font-family: 'Ubuntu', Georgia, Times, "Times New Roman", serif;
     font-weight: 300;
@@ -29,6 +30,83 @@ a.pure-button:hover, a.pure-menu-link:hover {
 .pure-button-primary, .pure-button-selected, a.pure-button-primary, a.pure-button-selected {
     background-color: @roxinho;
 }
+
+/////////// Components ///////////
+.steps-selector {
+    @step-base-color: #ddd;
+    @step-highlight-color: @roxinho;
+    @step-background-color: white;
+    @step-stripe-start: 38px;
+    @step-stripe-end: 43px;
+    @step-number-size: 40px;
+
+    margin: 20px 0;
+
+    .step {
+        // the horizontal stripe
+        background: linear-gradient(
+            0deg,
+            @step-background-color,
+            @step-background-color @step-stripe-start,
+            @step-base-color @step-stripe-start,
+            @step-base-color @step-stripe-end,
+            @step-background-color @step-stripe-end
+        );
+        position: relative;
+
+        &.highlight {
+            background: linear-gradient(
+                0deg,
+                @step-background-color,
+                @step-background-color @step-stripe-start,
+                @step-highlight-color @step-stripe-start,
+                @step-highlight-color @step-stripe-end,
+                @step-background-color @step-stripe-end
+            );
+
+            .step-number {
+                border-color: @step-highlight-color;
+            }
+        }
+
+        // first and last positions have an overlay
+        // to trim the stripe before/after the first/last item
+        &:first-child:before,
+        &:last-child:before {
+            content: ' ';
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            background: white;
+        }
+
+        &:first-child:before {
+            left: 0;
+        }
+
+        &:last-child:before {
+            right: 0;
+        }
+    }
+    .step-number {
+        width: @step-number-size;
+        height: @step-number-size;
+        margin: 0 auto;
+        border: 5px solid @step-base-color;
+        border-radius: 50%;
+        padding-top: 4px;
+        text-align: center;
+        background: white;
+        position: relative;
+    }
+    .step-text {
+        text-align: center;
+        position: relative;
+    }
+}
+
+//////////// Sections ////////////
 
 // Content Start
 .content {
@@ -312,80 +390,6 @@ a.pure-button:hover, a.pure-menu-link:hover {
 
         .button-select {
             width: 100%;
-        }
-    }
-
-    .steps-selector {
-        @step-base-color: #ddd;
-        @step-highlight-color: @roxinho;
-        @step-background-color: white;
-        @step-stripe-start: 38px;
-        @step-stripe-end: 43px;
-        @step-number-size: 40px;
-
-        margin: 20px 0;
-
-        .step {
-            // the horizontal stripe
-            background: linear-gradient(
-                0deg,
-                @step-background-color,
-                @step-background-color @step-stripe-start,
-                @step-base-color @step-stripe-start,
-                @step-base-color @step-stripe-end,
-                @step-background-color @step-stripe-end
-            );
-            position: relative;
-
-            &.highlight {
-                background: linear-gradient(
-                    0deg,
-                    @step-background-color,
-                    @step-background-color @step-stripe-start,
-                    @step-highlight-color @step-stripe-start,
-                    @step-highlight-color @step-stripe-end,
-                    @step-background-color @step-stripe-end
-                );
-
-                .step-number {
-                    border-color: @step-highlight-color;
-                }
-            }
-
-            // first and last positions have an overlay
-            // to trim the stripe before/after the first/last item
-            &:first-child:before,
-            &:last-child:before {
-                content: ' ';
-                width: 50%;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                background: white;
-            }
-
-            &:first-child:before {
-                left: 0;
-            }
-
-            &:last-child:before {
-                right: 0;
-            }
-        }
-        .step-number {
-            width: @step-number-size;
-            height: @step-number-size;
-            margin: 0 auto;
-            border: 5px solid @step-base-color;
-            border-radius: 50%;
-            padding-top: 4px;
-            text-align: center;
-            background: white;
-            position: relative;
-        }
-        .step-text {
-            text-align: center;
-            position: relative;
         }
     }
 }
