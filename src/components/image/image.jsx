@@ -120,7 +120,7 @@ export default function Image (props) {
           <div className="pure-u-4-5 pure-control-group">
             <input id="ServiceName" type="text" placeholder="hello-world-01287ccf" value="hello-world-01287ccf" className="pure-input-1"/>
           </div>
-          <div className="pure-u-1-5 pure-control-group">
+          <div className="pure-u-1-5 pure-control-group label-for-input">
             <label for="ImageTag">Image tag</label>
           </div>
           <div className="pure-u-4-5 pure-control-group">
@@ -134,7 +134,7 @@ export default function Image (props) {
           <div className="pure-u-4-5 pure-control-group">
             <input id="NumberOfContainers" type="range" min="0" max="10" step="1" className="pure-input-1"/>
           </div>
-          <div className="pure-u-1-5 pure-control-group">
+          <div className="pure-u-1-5 pure-control-group label-for-input">
             <label for="DeployTags">Deploy tags</label>
           </div>
           <div className="pure-u-4-5 pure-control-group">
