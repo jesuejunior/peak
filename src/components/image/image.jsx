@@ -114,12 +114,14 @@ export default function Image (props) {
           <div className="pure-u-4-5">
             <p>peak/hello-world</p>
           </div>
+
           <div className="pure-u-1-5 pure-control-group label-for-input">
             <label for="ServiceName">Service Name</label>
           </div>
           <div className="pure-u-4-5 pure-control-group">
             <input id="ServiceName" type="text" placeholder="hello-world-01287ccf" value="hello-world-01287ccf" className="pure-input-1"/>
           </div>
+
           <div className="pure-u-1-5 pure-control-group label-for-input">
             <label for="ImageTag">Image tag</label>
           </div>
@@ -128,18 +130,77 @@ export default function Image (props) {
               <option>latest</option>
             </select>
           </div>
+
           <div className="pure-u-1-5 pure-control-group">
             <label for="NumberOfContainers">Number of containers</label>
           </div>
           <div className="pure-u-4-5 pure-control-group">
             <input id="NumberOfContainers" type="range" min="0" max="10" step="1" className="pure-input-1"/>
           </div>
+
           <div className="pure-u-1-5 pure-control-group label-for-input">
             <label for="DeployTags">Deploy tags</label>
           </div>
           <div className="pure-u-4-5 pure-control-group">
             <input id="DeployTags" type="text" className="pure-input-1"/>
           </div>
+
+          <div className="pure-u-1-5 pure-control-group label-for-input">
+            <label for="Network">Network</label>
+          </div>
+          <div className="pure-u-4-5 pure-control-group">
+            <select id="Network" className="pure-input-1">
+              <option>Dummy-Network</option>
+            </select>
+          </div>
+
+          <div className="pure-u-1-5 pure-control-group label-for-input">
+            <label for="DeployTags">Hostname</label>
+          </div>
+          <div className="pure-u-4-5 pure-control-group">
+            <input id="Hostname" type="text" className="pure-input-1"/>
+          </div>
+
+          <div className="pure-u-1-5 pure-control-group label-for-input">
+            <label for="DeployTags">Domain</label>
+          </div>
+          <div className="pure-u-4-5 pure-control-group">
+            <input id="Domain" type="text" className="pure-input-1"/>
+          </div>
+
+          <div className="pure-u-1-5 pure-control-group label-for-table">
+            <label>Ports</label>
+          </div>
+          <div className="pure-u-4-5 pure-control-group">
+            <table class="table">
+              <thead>
+                <tr><th>Port</th><th>Protocol</th><th>Listen address</th><th>Host port</th><th></th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input type="number" size="5" min="0" max="65535"/>
+                  </td>
+                  <td>
+                    <select>
+                      <option>TCP</option>
+                    </select>
+                  </td>
+                  <td>
+                    <input type="text" placeholder="0.0.0.0" size="16"/>
+                  </td>
+                  <td>
+                    <input type="number" size="5" min="0" max="65535"/>
+                  </td>
+                  <td>
+                    <button className="pure-button pure-button-success"><i className="fa fa-plus"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+
         </form>
 
       </div>
