@@ -1,10 +1,12 @@
 'use strict';
 
 import gulp from 'gulp';
+import path from 'path';
 import browserSync from 'browser-sync';
 import contac from 'gulp-concat';
 import eslint from 'gulp-eslint';
 import filter from 'gulp-filter';
+import less from 'gulp-less';
 import css from 'gulp-css';
 import rev from 'gulp-rev';
 import revReplace from 'gulp-rev-replace';
@@ -62,12 +64,25 @@ gulp.task('img', function() {
     .pipe(gulp.dest('./public'));
 });
 
-gulp.task("index", function() {
-  var jsFilter = filter("public/app.jsx", { restore: true });
-  var cssFilter = filter("src/**/*.css", { restore: true });
+gulp.task('fonts', function() {
+  gulp.src('./src/fonts/*')
+    .pipe(gulp.dest('./public/fonts'));
+});
+
+gulp.task('less', function () {
+  return gulp.src('./src/less/**/*.less')
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ]
+    }))
+    .pipe(gulp.dest('.tmp/css'));
+});
+
+gulp.task('index', ['less'], function() {
+  var jsFilter = filter('public/app.jsx', { restore: true });
+  var cssFilter = filter(['src/**/*.css', '.tmp/css/**/*.css'], { restore: true });
   var indexHtmlFilter = filter(['src/**/*', '!**/index.html'], { restore: true });
 
-  return gulp.src("src/index.html")
+  return gulp.src('src/index.html')
     .pipe(useref())      // Concatenate with gulp-useref
     .pipe(jsFilter)
     .pipe(uglify())             // Minify any javascript sources
@@ -90,8 +105,10 @@ gulp.task('clean', function () {
 // Watch JS/JSX and Sass files
 gulp.task('watch', function() {
   gulp.watch('src/**/*.{js,jsx,html}', ['jsx', 'index']);
+  gulp.watch('src/less/**/*.less', ['less', 'index']);
   gulp.watch('src/css/**/*.css', ['index']);
   gulp.watch('src/img/**/*.{png,jpg}', ['img']);
+  gulp.watch('src/fonts/**/*', ['fonts']);
 });
 
 // BrowserSync
@@ -107,5 +124,5 @@ gulp.task('browsersync', function() {
   });
 });
 
-gulp.task('build', [ 'jsx', 'index', 'img']);
+gulp.task('build', [ 'less', 'fonts', 'img', 'jsx', 'index']);
 gulp.task('default', ['build', 'browsersync', 'watch']);

@@ -1,4 +1,10 @@
 /* @import url('https://fonts.googleapis.com/css?family=Ubuntu:400,300'); */
+
+// General Variables
+//@roxinho: #8156a7;
+@roxinho: #5f3264;
+
+// General Rules
 body,html {
     font-family: 'Ubuntu', Georgia, Times, "Times New Roman", serif;
     font-weight: 300;
@@ -15,8 +21,94 @@ html, button, input, select, textarea,
     /* font-weight: 300; */
 }
 
-/* Content Start */
+// Fixes bootstrap underline in buttons
+a.pure-button:hover, a.pure-menu-link:hover {
+    text-decoration: none;
+}
 
+// Changes pure primary button to main color
+.pure-button-primary, .pure-button-selected, a.pure-button-primary, a.pure-button-selected {
+    background-color: @roxinho;
+}
+
+/////////// Components ///////////
+.steps-selector {
+    @step-base-color: #ddd;
+    @step-highlight-color: @roxinho;
+    @step-background-color: white;
+    @step-stripe-start: 38px;
+    @step-stripe-end: 43px;
+    @step-number-size: 40px;
+
+    margin: 20px 0;
+
+    .step {
+        // the horizontal stripe
+        background: linear-gradient(
+            0deg,
+            @step-background-color,
+            @step-background-color @step-stripe-start,
+            @step-base-color @step-stripe-start,
+            @step-base-color @step-stripe-end,
+            @step-background-color @step-stripe-end
+        );
+        position: relative;
+
+        &.highlight {
+            background: linear-gradient(
+                0deg,
+                @step-background-color,
+                @step-background-color @step-stripe-start,
+                @step-highlight-color @step-stripe-start,
+                @step-highlight-color @step-stripe-end,
+                @step-background-color @step-stripe-end
+            );
+
+            .step-number {
+                border-color: @step-highlight-color;
+            }
+        }
+
+        // first and last positions have an overlay
+        // to trim the stripe before/after the first/last item
+        &:first-child:before,
+        &:last-child:before {
+            content: ' ';
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            background: white;
+        }
+
+        &:first-child:before {
+            left: 0;
+        }
+
+        &:last-child:before {
+            right: 0;
+        }
+    }
+    .step-number {
+        width: @step-number-size;
+        height: @step-number-size;
+        margin: 0 auto;
+        border: 5px solid @step-base-color;
+        border-radius: 50%;
+        padding-top: 4px;
+        text-align: center;
+        background: white;
+        position: relative;
+    }
+    .step-text {
+        text-align: center;
+        position: relative;
+    }
+}
+
+//////////// Sections ////////////
+
+// Content Start
 .content {
     /*margin: auto 50px;
     padding: 0 2em;
@@ -26,11 +118,9 @@ html, button, input, select, textarea,
     width: 980px;
     margin: 0 auto;
 }
+// Content End
 
-/* Content End */
-
-/*Menu Start*/
-
+// Menu Start
 .navbar {
     background-color: #fafafa;
     margin-bottom: 1em;
@@ -215,37 +305,40 @@ html, button, input, select, textarea,
     }
 
 }
-/*Menu End*/
+// Menu End
 
-/* Dashboard Start */
-.dashboard .box {
-    background-color: #eee;
-    margin: 2em;
-    padding-bottom: 2em;
+// Dashboard Start
+.dashboard {
+
+    .box {
+        background-color: #eee;
+        margin: 2em;
+        padding-bottom: 2em;
+
+        h4 {
+            background-color: @roxinho;
+            color: white;
+            display: inline-block;
+            font-weight: normal;
+            margin-top: .8em;
+            margin-left: -.6em;
+            padding: 1em;
+        }
+
+        .value {
+            font-size: 5em;
+            margin: 0;
+            text-align: center;
+        }
+
+        .graph-value {
+            text-align: center;
+        }
+    }
 }
+// Dashboard End
 
-.dashboard .box h4 {
-    background-color: #8156a7;
-    color: white;
-    display: inline-block;
-    font-weight: normal;
-    margin-top: .8em;
-    margin-left: -.6em;
-    padding: 1em;
-}
-
-.dashboard .box .value {
-    font-size: 5em;
-    margin: 0;
-    text-align: center;
-}
-
-.dashboard .box .graph-value {
-    text-align: center;
-}
-/* Dashboard End */
-
-/* Footer Start */
+// Footer Start
 .footer {
     position: fixed;
     bottom: 0;
@@ -254,4 +347,92 @@ html, button, input, select, textarea,
     border-top: 1px solid #ccc;
     width: 100%;
 }
-/* Footer End */
+// Footer End
+
+// Images Start
+.image {
+    padding-bottom: 60px;
+
+    .image-type {
+        margin-bottom: 20px;
+    }
+
+    .search-options {
+        margin-bottom: 10px;
+    }
+
+    .search-bar {
+        position: relative;
+        margin-bottom: 20px;
+
+        i {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+        }
+
+        input {
+            padding-left: 25px;
+        }
+    }
+
+    .images-item {
+        margin-bottom: 20px;
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .logo img {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .button-select {
+            width: 100%;
+        }
+    }
+
+    .image-properties {
+        // smaller on big viewports
+        @media (min-width: 65em){
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        // every left column
+        div:nth-child(odd){
+            text-align: right;
+            padding-right: 1em;
+            height: 3em;
+        }
+
+        .label-for-input {
+            margin-top: 5px;
+        }
+
+        .label-for-table {
+            margin-top: 1.7em;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 0 10px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+
+            input, select, button {
+                width: 100%;
+            }
+        }
+    }
+}
+// Images End
