@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 export default function Image (props) {
   return(
-    <div className="image">
+    <div className="image-module">
       <div className="content">
 
         <div className="steps-selector pure-g">
@@ -116,14 +116,14 @@ export default function Image (props) {
           </div>
 
           <div className="pure-u-1-5 pure-control-group label-for-input">
-            <label for="ServiceName">Service Name</label>
+            <label htmlFor="ServiceName">Service Name</label>
           </div>
           <div className="pure-u-4-5 pure-control-group">
-            <input id="ServiceName" type="text" placeholder="hello-world-01287ccf" value="hello-world-01287ccf" className="pure-input-1"/>
+            <input id="ServiceName" type="text" placeholder="hello-world-01287ccf" defaultValue="hello-world-01287ccf" className="pure-input-1"/>
           </div>
 
           <div className="pure-u-1-5 pure-control-group label-for-input">
-            <label for="ImageTag">Image tag</label>
+            <label htmlFor="ImageTag">Image tag</label>
           </div>
           <div className="pure-u-4-5 pure-control-group">
             <select id="ImageTag" className="pure-input-1">
@@ -132,21 +132,21 @@ export default function Image (props) {
           </div>
 
           <div className="pure-u-1-5 pure-control-group">
-            <label for="NumberOfContainers">Number of containers</label>
+            <label htmlFor="NumberOfContainers">Number of containers</label>
           </div>
           <div className="pure-u-4-5 pure-control-group">
             <input id="NumberOfContainers" type="range" min="0" max="10" step="1" className="pure-input-1"/>
           </div>
 
           <div className="pure-u-1-5 pure-control-group label-for-input">
-            <label for="DeployTags">Deploy tags</label>
+            <label htmlFor="DeployTags">Deploy tags</label>
           </div>
           <div className="pure-u-4-5 pure-control-group">
             <input id="DeployTags" type="text" className="pure-input-1"/>
           </div>
 
           <div className="pure-u-1-5 pure-control-group label-for-input">
-            <label for="Network">Network</label>
+            <label htmlFor="Network">Network</label>
           </div>
           <div className="pure-u-4-5 pure-control-group">
             <select id="Network" className="pure-input-1">
@@ -155,14 +155,14 @@ export default function Image (props) {
           </div>
 
           <div className="pure-u-1-5 pure-control-group label-for-input">
-            <label for="DeployTags">Hostname</label>
+            <label htmlFor="DeployTags">Hostname</label>
           </div>
           <div className="pure-u-4-5 pure-control-group">
             <input id="Hostname" type="text" className="pure-input-1"/>
           </div>
 
           <div className="pure-u-1-5 pure-control-group label-for-input">
-            <label for="DeployTags">Domain</label>
+            <label htmlFor="DeployTags">Domain</label>
           </div>
           <div className="pure-u-4-5 pure-control-group">
             <input id="Domain" type="text" className="pure-input-1"/>
@@ -172,7 +172,7 @@ export default function Image (props) {
             <label>Ports</label>
           </div>
           <div className="pure-u-4-5 pure-control-group">
-            <table class="table">
+            <table className="table">
               <thead>
                 <tr><th>Port</th><th>Protocol</th><th>Listen address</th><th>Host port</th><th></th></tr>
               </thead>
@@ -193,7 +193,7 @@ export default function Image (props) {
                     <input type="number" size="5" min="0" max="65535"/>
                   </td>
                   <td>
-                    <button className="pure-button pure-button-success"><i className="fa fa-plus"></i></button>
+                    <button className="pure-button pure-button-success"><i className="fa fa-plus" aria-hidden="true"></i></button>
                   </td>
                 </tr>
               </tbody>

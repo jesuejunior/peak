@@ -31,6 +31,33 @@ a.pure-button:hover, a.pure-menu-link:hover {
     background-color: @roxinho;
 }
 
+// Colors that doesn't come with Pure CSS
+.button-success {
+    background: rgb(28, 184, 65);
+    color: white;
+}
+.button-error {
+    background: rgb(202, 60, 60);
+    color: white;
+}
+.button-warning {
+    background: rgb(223, 117, 20);
+}
+.button-secondary {
+    background: rgb(66, 184, 221);
+}
+
+// Auxiliary classes
+.text-right {
+    text-align: right;
+}
+.red {
+    color: red;
+}
+.green {
+    color: darkgreen;
+}
+
 /////////// Components ///////////
 .steps-selector {
     @step-base-color: #ddd;
@@ -350,7 +377,7 @@ a.pure-button:hover, a.pure-menu-link:hover {
 // Footer End
 
 // Images Start
-.image {
+.image-module {
     padding-bottom: 60px;
 
     .image-type {
@@ -436,3 +463,32 @@ a.pure-button:hover, a.pure-menu-link:hover {
     }
 }
 // Images End
+
+// Expeditions Start
+.expedition-module {
+    .title-bar button {
+        margin: 0 .5em;
+    }
+    .partly {
+        color: darkorange;
+    }
+    table {
+        width: 100%;
+    }
+    thead {
+        background: #eee;
+    }
+    tr {
+        border-bottom: 1px solid #ddd;
+    }
+    th {
+        text-align: left;
+    }
+    td:last-child {
+        text-align: right;
+    }
+    .red,.green {
+        font-weight: bold;
+    }
+}
+// Expeditions End
