@@ -4,7 +4,102 @@ import { Link } from 'react-router';
 export default function Expedition (props) {
     return(
         <div className="expedition-module">
-            <div className="pure-g ">
+            <h2>Expeditions <button className="pure-button pure-button-primary">Add Expedition</button></h2>
+            <div className="pure-g">
+                <div className="pure-u-1-4">
+                    <div className="expedition-box active">
+                        <div className="status">
+                            <span>Active</span>
+                        </div>
+                        <h3>
+                            <i className="fa fa-server" aria-hidden="true"></i><br/>
+                            hello-world
+                        </h3>
+                        <p className="info">
+                            <div>
+                                <span>
+                                    <i className="fa fa-square-o" aria-hidden="true"></i> 13.37.13.37
+                                </span>
+                                <span>
+                                    <i className="fa fa-square-o" aria-hidden="true"></i> peak
+                                </span>
+                            </div>
+                            <div>
+                                <span>
+                                    <i className="fa fa-square-o" aria-hidden="true"></i> 2.4 <abbr title="gigahertz">GHz</abbr>
+                                </span>
+                                <span>
+                                    <i className="fa fa-square-o" aria-hidden="true"></i> 0.97 <abbr title="gigibyte">GiB</abbr>
+                                </span>
+                                <span>
+                                    <i className="fa fa-square-o" aria-hidden="true"></i> 29.4 <abbr title="gigibyte">GiB</abbr>
+                                </span>
+                            </div>
+                            <div className="target">target.hello-world</div>
+                        </p>
+                        <div className="pure-g containers">
+                            <div className="pure-u-1-2">
+                                <i className="fa fa-square-o" aria-hidden="true"></i> hello agent <br/> 13.37.13.37
+                            </div>
+                            <div className="pure-u-1-2">
+                                <i className="fa fa-square-o" aria-hidden="true"></i> world agent <br/> 133.71.33.7
+                            </div>
+                            <div className="pure-u-1-2">
+                                <i className="fa fa-square-o" aria-hidden="true"></i> dummy agent <br/> 1.33.7.7
+                            </div>
+                            <div className="pure-u-1-2 add">
+                                <a href="#"><i className="fa fa-plus" aria-hidden="true"></i> Add Container</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="pure-u-1-4">
+                    <div className="expedition-box stopped">
+                        <div className="status">
+                            <span>Stopped</span>
+                        </div>
+                        <h3>
+                            <i className="fa fa-server" aria-hidden="true"></i><br/>
+                            hello-world
+                        </h3>
+                        <p className="info">
+                            <div>
+                                <span>
+                                    <i className="fa fa-square-o" aria-hidden="true"></i> 13.37.13.37
+                                </span>
+                                <span>
+                                    <i className="fa fa-square-o" aria-hidden="true"></i> peak
+                                </span>
+                            </div>
+                            <div>
+                                <span>
+                                    <i className="fa fa-square-o" aria-hidden="true"></i> 2.4 <abbr title="gigahertz">GHz</abbr>
+                                </span>
+                                <span>
+                                    <i className="fa fa-square-o" aria-hidden="true"></i> 0.97 <abbr title="gigibyte">GiB</abbr>
+                                </span>
+                                <span>
+                                    <i className="fa fa-square-o" aria-hidden="true"></i> 29.4 <abbr title="gigibyte">GiB</abbr>
+                                </span>
+                            </div>
+                            <div className="target">target.hello-world</div>
+                        </p>
+                        <div className="pure-g containers">
+                            <div className="pure-u-1-2">
+                                <i className="fa fa-square-o" aria-hidden="true"></i> hello agent <br/> 13.37.13.37
+                            </div>
+                            <div className="pure-u-1-2">
+                                <i className="fa fa-square-o" aria-hidden="true"></i> world agent <br/> 133.71.33.7
+                            </div>
+                            <div className="pure-u-1 add">
+                                <a href="#"><i className="fa fa-plus" aria-hidden="true"></i> Add Container</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="pure-g">
                 <div className="pure-u-1-4">
                     <h2>expedition-name</h2>
                     <h3 className="partly">
