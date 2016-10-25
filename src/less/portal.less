@@ -3,6 +3,8 @@
 // General Variables
 //@roxinho: #8156a7;
 @roxinho: #5f3264;
+@green: rgb(28, 184, 65);
+@red: rgb(202, 60, 60);
 
 // General Rules
 body,html {
@@ -33,11 +35,11 @@ a.pure-button:hover, a.pure-menu-link:hover {
 
 // Colors that doesn't come with Pure CSS
 .button-success {
-    background: rgb(28, 184, 65);
+    background: @green;
     color: white;
 }
 .button-error {
-    background: rgb(202, 60, 60);
+    background: @red;
     color: white;
 }
 .button-warning {
@@ -52,10 +54,10 @@ a.pure-button:hover, a.pure-menu-link:hover {
     text-align: right;
 }
 .red {
-    color: red;
+    color: @red;
 }
 .green {
-    color: darkgreen;
+    color: @green;
 }
 
 /////////// Components ///////////
@@ -466,23 +468,26 @@ a.pure-button:hover, a.pure-menu-link:hover {
 
 // Expeditions Start
 .expedition-module {
-    h2 button {
-        font-size: .5em;
-        margin-left: 1.3em;
-        &:before {
-            content: "";
-            display: block;
-            background: #ddd;
+    h2 {
+        button {
+            font-size: 14px;
+            margin-top: -8px;
+        }
+        .separator {
             width: 1px;
-            height: 1.4em;
-            float: left;
-            margin-left: -2em;
+            height: 30px;
+            background: #ddd;
+            display: inline-block;
+            margin-left: 12px;
+            margin-right: 12px;
+            position: relative;
+            top: 5px;
         }
     }
     .expedition-box {
         background: white;
         box-shadow: 1px 1px 5px #ddd;
-        margin: 5px;
+        margin: 12px;
 
         // reset margins on the edges of the "table"
         &:nth-of-type(4n){
@@ -511,28 +516,22 @@ a.pure-button:hover, a.pure-menu-link:hover {
         }
 
         &.active {
-            @color: green;
+            @color: @green;
             .status {
                 border-top-color: @color;
                 span {
                     background-color: @color;
                 }
-            }
-            h3 i {
-                color: @color;
             }
         }
 
         &.stopped {
-            @color: red;
+            @color: @red;
             .status {
                 border-top-color: @color;
                 span {
                     background-color: @color;
                 }
-            }
-            h3 i {
-                color: @color;
             }
         }
 
