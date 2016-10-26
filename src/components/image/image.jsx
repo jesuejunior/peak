@@ -8,17 +8,21 @@ export default function Image (props) {
 
         <div className="step-1">
           <div className="steps-selector pure-g">
-            <div className="pure-u-1-3 step highlight">
+            <div className="pure-u-1-4 step highlight">
               <div className="step-number">1</div>
               <div className="step-text">Image selection</div>
             </div>
-            <div className="pure-u-1-3 step">
+            <div className="pure-u-1-4 step">
               <div className="step-number">2</div>
               <div className="step-text">Service configuration</div>
             </div>
-            <div className="pure-u-1-3 step">
+            <div className="pure-u-1-4 step">
               <div className="step-number">3</div>
               <div className="step-text">Environment variables</div>
+            </div>
+            <div className="pure-u-1-4 step">
+              <div className="step-number">4</div>
+              <div className="step-text">Volumes</div>
             </div>
           </div>
 
@@ -92,21 +96,25 @@ export default function Image (props) {
           </div>
         </div>
 
-        <p>-------------------------------------------------------------------------------------------</p>
+        <hr/>
 
         <div className="step-2">
           <div className="steps-selector pure-g">
-            <div className="pure-u-1-3 step highlight">
+            <div className="pure-u-1-4 step highlight">
               <div className="step-number"><i className="fa fa-check" aria-hidden="true"></i></div>
               <div className="step-text">Image selection</div>
             </div>
-            <div className="pure-u-1-3 step highlight">
+            <div className="pure-u-1-4 step highlight">
               <div className="step-number">2</div>
               <div className="step-text">Service configuration</div>
             </div>
-            <div className="pure-u-1-3 step">
+            <div className="pure-u-1-4 step">
               <div className="step-number">3</div>
               <div className="step-text">Environment variables</div>
+            </div>
+            <div className="pure-u-1-4 step">
+              <div className="step-number">4</div>
+              <div className="step-text">Volumes</div>
             </div>
           </div>
 
@@ -203,6 +211,84 @@ export default function Image (props) {
               </table>
             </div>
           </form>
+        </div>
+
+        <hr/>
+
+        <div className="step-3">
+
+          <div className="steps-selector pure-g">
+            <div className="pure-u-1-4 step highlight">
+              <div className="step-number"><i className="fa fa-check" aria-hidden="true"></i></div>
+              <div className="step-text">Image selection</div>
+            </div>
+            <div className="pure-u-1-4 step highlight">
+              <div className="step-number"><i className="fa fa-check" aria-hidden="true"></i></div>
+              <div className="step-text">Service configuration</div>
+            </div>
+            <div className="pure-u-1-4 step highlight">
+              <div className="step-number">3</div>
+              <div className="step-text">Environment variables</div>
+            </div>
+            <div className="pure-u-1-4 step">
+              <div className="step-number">4</div>
+              <div className="step-text">Volumes</div>
+            </div>
+          </div>
+
+          <table className="pure-table variables">
+            <thead>
+              <tr>
+                <th>New key</th>
+                <th>New value</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="text"/></td>
+                <td><input type="text"/></td>
+                <td>
+                  <button className="pure-button button-success"><i className="fa fa-hdd-o" aria-hidden="true"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table className="pure-table variables">
+            <thead>
+              <tr>
+                <th>Variable keys</th>
+                <th>Variable values</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input type="text" defaultValue="hello"/>
+                </td>
+                <td>
+                  <input type="text" defaultValue="world"/>
+                </td>
+                <td>
+                  <button className="pure-button button-error"><i className="fa fa-trash" aria-hidden="true"></i></button>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" defaultValue="port"/>
+                </td>
+                <td>
+                  <input type="text" defaultValue="1337"/>
+                </td>
+                <td>
+                  <button className="pure-button button-error"><i className="fa fa-trash" aria-hidden="true"></i></button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
         </div>
 
       </div>
