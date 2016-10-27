@@ -7,6 +7,7 @@ export default function Image (props) {
       <div className="content">
 
         <div className="step-1">
+          <h2>Images</h2>
           <div className="steps-selector pure-g">
             <div className="pure-u-1-4 step highlight">
               <div className="step-number">1</div>
@@ -236,7 +237,7 @@ export default function Image (props) {
             </div>
           </div>
 
-          <table className="pure-table variables">
+          <table className="pure-table pure-form variables">
             <thead>
               <tr>
                 <th>New key</th>
@@ -245,7 +246,7 @@ export default function Image (props) {
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr className="pure-control-group">
                 <td><input type="text"/></td>
                 <td><input type="text"/></td>
                 <td>
@@ -255,7 +256,7 @@ export default function Image (props) {
             </tbody>
           </table>
 
-          <table className="pure-table variables">
+          <table className="pure-table pure-form variables">
             <thead>
               <tr>
                 <th>Variable keys</th>
@@ -264,7 +265,7 @@ export default function Image (props) {
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr className="pure-control-group">
                 <td>
                   <input type="text" defaultValue="hello"/>
                 </td>
@@ -285,6 +286,120 @@ export default function Image (props) {
                 <td>
                   <button className="pure-button button-error"><i className="fa fa-trash" aria-hidden="true"></i></button>
                 </td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+
+        <hr/>
+
+        <div className="step-4">
+
+          <div className="steps-selector pure-g">
+            <div className="pure-u-1-4 step highlight">
+              <div className="step-number"><i className="fa fa-check" aria-hidden="true"></i></div>
+              <div className="step-text">Image selection</div>
+            </div>
+            <div className="pure-u-1-4 step highlight">
+              <div className="step-number"><i className="fa fa-check" aria-hidden="true"></i></div>
+              <div className="step-text">Service configuration</div>
+            </div>
+            <div className="pure-u-1-4 step highlight">
+              <div className="step-number"><i className="fa fa-check" aria-hidden="true"></i></div>
+              <div className="step-text">Environment variables</div>
+            </div>
+            <div className="pure-u-1-4 step highlight">
+              <div className="step-number">4</div>
+              <div className="step-text">Volumes</div>
+            </div>
+          </div>
+
+          <div className="pure-g pure-form add-volumes">
+            <div className="pure-u-1-4 pure-control-group labels">
+              <label htmlFor="add-volumes-select-service">Add volumes from</label>
+            </div>
+            <div className="pure-u-1-2 pure-control-group">
+              <select id="add-volumes-select-service" className="pure-input-1">
+                <option value="">Select service</option>
+              </select>
+            </div>
+            <div className="pure-u-1-4 pure-control-group buttons">
+              <button className="pure-button button-success">
+                <i className="fa fa-plus" aria-hidden="true"></i> Add
+              </button>
+            </div>
+
+            <div className="pure-u-1-4 pure-control-group labels">
+              <label htmlFor="add-volumes-container-path">Add volume</label>
+            </div>
+            <div className="pure-u-1-4 pure-control-group">
+              <input type="text" id="add-volumes-container-path" className="pure-input-1" placeholder="Container path"/>
+            </div>
+            <div className="pure-u-1-4 pure-control-group">
+              <input type="text" id="add-volumes-host-path" className="pure-input-1" placeholder="Host path (optional)"/>
+            </div>
+            <div className="pure-u-1-4 pure-control-group buttons">
+              <button className="pure-button button-success">
+                <i className="fa fa-plus" aria-hidden="true"></i> Add
+              </button>
+            </div>
+          </div>
+
+          <table className="pure-table pure-table-horizontal volumes-from-other-services">
+            <thead>
+              <tr>
+                <th>Volumes from other services</th>
+                <th>Writable</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>data-container</td>
+                <td>
+                  <i className="fa fa-check-circle green" aria-hidden="true"></i>
+                </td>
+                <td>
+                  <button className="pure-button button-error">
+                    <i className="fa fa-trash" aria-hidden="true"></i>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table className="pure-table pure-table-horizontal paths">
+            <thead>
+              <tr>
+                <th>Container path</th>
+                <th>Host path</th>
+                <th>Writable</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>/ghost-override</td>
+                <td>/docker/blog</td>
+                <td>
+                  <i className="fa fa-check-circle green" aria-hidden="true"></i>
+                </td>
+                <td>
+                  <button className="pure-button button-error">
+                    <i className="fa fa-trash" aria-hidden="true"></i>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>/data</td>
+                <td>
+                  <em><a href="#">Add host path</a></em>
+                </td>
+                <td>
+                  <i className="fa fa-check-circle" aria-hidden="true"></i>
+                </td>
+                <td></td>
               </tr>
             </tbody>
           </table>
